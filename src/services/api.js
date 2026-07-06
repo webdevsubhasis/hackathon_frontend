@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "/api",
+  baseURL: "https://hackathon-backend-e10l.onrender.com/api",
   timeout: 60000,
   headers: {
     "Content-Type": "application/json",
