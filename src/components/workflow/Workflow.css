@@ -1,0 +1,797 @@
+/* ==========================================================
+   RecruitIQ AI Workflow
+   Premium Version
+========================================================== */
+
+.workflow-section {
+  position: relative;
+  padding: 120px 24px;
+  overflow: hidden;
+}
+
+/* ===============================
+      BACKGROUND LIGHT
+================================ */
+
+.workflow-background {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.workflow-background::before {
+  content: "";
+
+  position: absolute;
+
+  width: 850px;
+  height: 850px;
+
+  left: 50%;
+  top: -300px;
+
+  transform: translateX(-50%);
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(108, 92, 231, 0.18),
+    transparent 72%
+  );
+
+  filter: blur(110px);
+}
+
+.workflow-background::after {
+  content: "";
+
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  right: -180px;
+  bottom: -120px;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(99, 102, 241, 0.12),
+    transparent 70%
+  );
+
+  filter: blur(80px);
+}
+
+/* ===============================
+        CONTAINER
+================================ */
+
+.workflow-container {
+  position: relative;
+
+  max-width: 1440px;
+  margin: 0 auto;
+
+  z-index: 2;
+}
+
+/* ===============================
+          HEADING
+================================ */
+
+.workflow-heading {
+  text-align: center;
+
+  margin-bottom: 60px;
+}
+
+.workflow-badge {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 12px 22px;
+
+  border-radius: 999px;
+
+  background: rgba(17, 26, 46, 0.72);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(20px);
+
+  color: #8b7cf6;
+
+  font-size: 14px;
+
+  font-weight: 700;
+}
+
+.workflow-heading h2 {
+  margin-top: 28px;
+
+  font-size: 54px;
+
+  line-height: 1.08;
+
+  color: #fff;
+
+  font-weight: 800;
+}
+
+.workflow-heading p {
+  max-width: 860px;
+
+  margin: 30px auto 0;
+
+  color: #94a3b8;
+
+  font-size: 18px;
+
+  line-height: 1.9;
+}
+
+/* ===============================
+          GRID
+================================ */
+
+.workflow-grid {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 70px;
+}
+
+/* ===============================
+          ROW
+================================ */
+
+.workflow-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 48px;
+
+  align-items: stretch;
+
+  justify-items: center;
+
+  overflow: visible; /* ADD THIS */
+}
+
+/* Bottom row */
+
+.workflow-row-bottom {
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(280px, 320px));
+
+  justify-content: center;
+
+  gap: 40px;
+}
+
+/* ===============================
+          CELL
+================================ */
+
+.workflow-cell {
+  position: relative;
+
+  overflow: visible;
+
+  z-index: 2;
+}
+
+/* ===============================
+     CARD SIZE (VERY IMPORTANT)
+================================ */
+
+.workflow-card {
+  max-width: 285px;
+  width: 100%;
+}
+
+.workflow-card-inner {
+  min-height: 410px;
+
+  display: flex;
+
+  flex-direction: column;
+}
+
+/* Equal Description Height */
+
+.workflow-description {
+  flex: 1;
+}
+
+/* ===============================
+      MIDDLE CONNECTOR
+================================ */
+
+.workflow-middle {
+  display: flex;
+
+  justify-content: flex-end;
+
+  padding-right: 165px;
+}
+/* ==========================================================
+   CARDS
+========================================================== */
+
+.workflow-card {
+  position: relative;
+
+  width: 100%;
+
+  transition: 0.4s ease;
+}
+.workflow-card {
+  position: relative;
+}
+.workflow-card-inner {
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: flex-start;
+
+  overflow: hidden;
+
+  min-height: 460px;
+
+  height: 100%;
+
+  padding: 38px 30px;
+
+  border-radius: 28px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.05),
+      rgba(255, 255, 255, 0.02)
+    ),
+    rgba(17, 26, 46, 0.78);
+
+  backdrop-filter: blur(22px);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.workflow-card-inner::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.05),
+    transparent 60%
+  );
+
+  pointer-events: none;
+}
+
+.workflow-card:hover {
+  transform: translateY(-10px);
+
+  z-index: 20;
+}
+
+.workflow-card:hover .workflow-card-inner {
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.45);
+}
+
+/* ==========================================================
+   STEP BADGE
+========================================================== */
+
+.workflow-step {
+  position: absolute;
+
+  left: 20px;
+
+  top: 20px;
+
+  width: 46px;
+
+  height: 46px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 14px;
+
+  color: #fff;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  transition: 0.3s;
+}
+
+.workflow-card:hover .workflow-step {
+  transform: scale(1.08);
+}
+
+/* ==========================================================
+   GLOW
+========================================================== */
+
+.workflow-glow {
+  position: absolute;
+
+  width: 190px;
+
+  height: 190px;
+
+  right: -80px;
+
+  top: -80px;
+
+  border-radius: 50%;
+
+  filter: blur(90px);
+
+  opacity: 0.18;
+
+  transition: 0.4s;
+}
+
+.workflow-card:hover .workflow-glow {
+  opacity: 0.35;
+}
+
+/* ==========================================================
+   ICON
+========================================================== */
+
+.workflow-icon {
+  width: 82px;
+  height: 82px;
+
+  margin: 38px auto 24px;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  transition: 0.35s;
+}
+
+.workflow-card:hover .workflow-icon {
+  transform: scale(1.08) rotate(8deg);
+}
+
+/* ==========================================================
+   TITLE
+========================================================== */
+
+.workflow-title {
+  min-height: 64px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  text-align: center;
+
+  color: #fff;
+
+  font-size: 20px;
+
+  font-weight: 700;
+
+  line-height: 1.35;
+
+  margin-bottom: 18px;
+}
+
+/* ==========================================================
+   DIVIDER
+========================================================== */
+
+.workflow-divider {
+  width: 56px;
+
+  height: 4px;
+
+  margin: auto;
+
+  margin-bottom: 22px;
+
+  border-radius: 999px;
+
+  transition: 0.35s;
+}
+
+.workflow-card:hover .workflow-divider {
+  width: 76px;
+}
+
+/* ==========================================================
+   DESCRIPTION
+========================================================== */
+
+.workflow-description {
+  flex: 1;
+
+  display: flex;
+
+  justify-content: flex-start;
+
+  align-items: flex-start;
+
+  text-align: center;
+
+  color: #94a3b8;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+
+  min-height: 120px;
+}
+
+/* ==========================================================
+   TAG
+========================================================== */
+
+.workflow-tag {
+  margin-top: auto;
+
+  padding: 12px 18px;
+
+  border-radius: 14px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.workflow-card:hover .workflow-tag {
+  transform: translateY(-2px);
+}
+
+/* ==========================================================
+   BOTTOM DOT
+========================================================== */
+
+.workflow-bottom {
+  display: flex;
+
+  justify-content: center;
+
+  margin-top: 28px;
+}
+
+.workflow-dot {
+  width: 12px;
+
+  height: 12px;
+
+  border-radius: 50%;
+
+  animation: workflowPulse 2s infinite;
+}
+/* ==========================================================
+   CONNECTORS
+========================================================== */
+
+/* Right Connector */
+
+.workflow-arrow-right {
+  position: absolute;
+
+  top: 50%;
+
+  left: 100%;
+
+  transform: translateY(-50%);
+
+  width: 60px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  z-index: 30;
+}
+
+/* Left Connector */
+
+.workflow-arrow-left {
+  position: absolute;
+
+  top: 50%;
+
+  right: 100%;
+
+  transform: translateY(-50%);
+
+  width: 70px;
+
+  display: flex;
+
+  align-items: center;
+
+  z-index: 50;
+}
+
+.workflow-line {
+  flex: 1;
+
+  height: 2px;
+
+  background: repeating-linear-gradient(
+    to right,
+    #8b5cf6 0 8px,
+    transparent 8px 16px
+  );
+}
+
+.workflow-arrow-left .workflow-line {
+  order: 2;
+}
+
+.workflow-chevron {
+  font-size: 20px;
+
+  color: #8b5cf6;
+
+  font-weight: bold;
+
+  animation: workflowArrow 1.6s infinite;
+}
+
+/* ==========================================================
+      VERTICAL CONNECTOR
+========================================================== */
+
+.workflow-middle {
+  position: relative;
+
+  display: flex;
+
+  justify-content: flex-end;
+
+  padding-right: 110px;
+
+  margin: -45px 0;
+}
+
+.workflow-curve {
+  width: 120px;
+  height: 70px;
+  overflow: visible;
+}
+
+.workflow-path {
+  fill: none;
+
+  stroke: #8b5cf6;
+
+  stroke-width: 3;
+
+  stroke-linecap: round;
+
+  stroke-dasharray: 8 8;
+
+  animation: flowLine 2s linear infinite;
+}
+
+.workflow-vertical-arrow {
+  position: absolute;
+
+  bottom: -18px;
+
+  right: 112px;
+
+  font-size: 22px;
+
+  color: #8b5cf6;
+
+  animation: workflowBounce 1.6s infinite;
+}
+
+/* ==========================================================
+      SUMMARY
+========================================================== */
+
+.workflow-summary {
+  margin-top: 90px;
+}
+
+.workflow-summary-card {
+  max-width: 950px;
+
+  margin: auto;
+
+  padding: 42px;
+
+  border-radius: 28px;
+
+  background: rgba(17, 26, 46, 0.78);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(22px);
+
+  text-align: center;
+}
+
+.workflow-summary-card h3 {
+  color: #fff;
+
+  font-size: 34px;
+
+  font-weight: 700;
+}
+
+.workflow-summary-card p {
+  margin-top: 20px;
+
+  color: #94a3b8;
+
+  line-height: 2;
+
+  font-size: 16px;
+}
+
+/* ==========================================================
+      ANIMATIONS
+========================================================== */
+
+@keyframes workflowArrow {
+  0% {
+    transform: translateX(0);
+    opacity: 0.6;
+  }
+
+  50% {
+    transform: translateX(5px);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 0.6;
+  }
+}
+
+@keyframes workflowBounce {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(6px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes workflowPulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.75;
+  }
+
+  50% {
+    transform: scale(1.4);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(0.9);
+    opacity: 0.75;
+  }
+}
+
+/* ==========================================================
+      RESPONSIVE
+========================================================== */
+
+@media (max-width: 1400px) {
+  .workflow-row,
+  .workflow-row-bottom {
+    grid-template-columns: repeat(2, 320px);
+
+    gap: 40px;
+  }
+
+  .workflow-arrow-right,
+  .workflow-arrow-left {
+    display: none;
+  }
+
+  .workflow-middle {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .workflow-section {
+    padding: 80px 18px;
+  }
+
+  .workflow-heading {
+    margin-bottom: 60px;
+  }
+
+  .workflow-heading h2 {
+    font-size: 36px;
+  }
+
+  .workflow-heading p {
+    font-size: 15px;
+  }
+
+  .workflow-row,
+  .workflow-row-bottom {
+    grid-template-columns: 1fr;
+
+    justify-items: center;
+  }
+
+  .workflow-card {
+    max-width: 360px;
+
+    width: 100%;
+  }
+
+  .workflow-summary-card {
+    padding: 26px;
+  }
+
+  .workflow-summary-card h3 {
+    font-size: 26px;
+  }
+
+  .workflow-summary-card p {
+    font-size: 15px;
+
+    line-height: 1.8;
+  }
+}

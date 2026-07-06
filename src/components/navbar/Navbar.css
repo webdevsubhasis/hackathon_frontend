@@ -1,0 +1,279 @@
+/* ==========================================================
+   RecruitIQ AI - Premium Navbar
+   Inspired by OpenAI • Vercel • Stripe
+========================================================== */
+
+/* ===========================
+   Root
+=========================== */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  z-index: 1000;
+
+  background: rgba(8, 17, 31, 0.78);
+
+  backdrop-filter: blur(24px);
+
+  -webkit-backdrop-filter: blur(24px);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+  transition: all .35s ease;
+}
+
+/* Scroll State */
+
+.navbar.scrolled{
+
+    background:rgba(8,17,31,.90);
+
+    box-shadow:
+    0 15px 50px rgba(0,0,0,.35);
+
+}
+
+/* ===========================
+   Logo
+=========================== */
+
+.logo-gradient{
+
+    background:linear-gradient(
+        135deg,
+        #8B5CF6,
+        #6366F1,
+        #06B6D4
+    );
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+}
+
+.logo-icon{
+
+    transition:.35s;
+
+}
+
+.logo-icon:hover{
+
+    transform:rotate(10deg) scale(1.08);
+
+}
+
+/* ===========================
+   Navigation Links
+=========================== */
+
+.nav-link{
+
+    position:relative;
+
+    color:#94A3B8;
+
+    font-size:15px;
+
+    font-weight:500;
+
+    transition:.3s;
+
+}
+
+.nav-link:hover{
+
+    color:white;
+
+}
+
+.nav-link::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-8px;
+
+    width:0;
+
+    height:2px;
+
+    border-radius:99px;
+
+    background:linear-gradient(
+        to right,
+        #8B5CF6,
+        #06B6D4
+    );
+
+    transition:.3s;
+
+}
+
+.nav-link:hover::after{
+
+    width:100%;
+
+}
+
+.nav-link.active{
+
+    color:white;
+
+}
+
+.nav-link.active::after{
+
+    width:100%;
+
+}
+
+/* ===========================
+   Buttons
+=========================== */
+
+.nav-btn{
+
+    transition:.3s;
+
+}
+
+.nav-btn:hover{
+
+    transform:translateY(-2px);
+
+}
+
+/* ===========================
+   Mobile Drawer
+=========================== */
+
+.mobile-drawer{
+
+    background:#08111F;
+
+    border-left:1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+
+        -10px 0 40px rgba(0,0,0,.35);
+
+}
+
+/* ===========================
+   Mobile Menu Item
+=========================== */
+
+.mobile-nav-item{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    width:100%;
+
+    padding:16px 18px;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    color:white;
+
+    transition:.3s;
+
+}
+
+.mobile-nav-item:hover{
+
+    background:rgba(139,92,246,.12);
+
+    border-color:rgba(139,92,246,.35);
+
+    transform:translateX(4px);
+
+}
+
+/* ===========================
+   Scrollbar
+=========================== */
+
+.mobile-drawer::-webkit-scrollbar{
+
+    width:6px;
+
+}
+
+.mobile-drawer::-webkit-scrollbar-thumb{
+
+    background:#374151;
+
+    border-radius:999px;
+
+}
+
+/* ===========================
+   Backdrop
+=========================== */
+
+.mobile-overlay{
+
+    backdrop-filter:blur(6px);
+
+    -webkit-backdrop-filter:blur(6px);
+
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media (max-width:1024px){
+
+.nav-link{
+
+display:none;
+
+}
+
+}
+
+@media (max-width:768px){
+
+.logo-title{
+
+font-size:18px;
+
+}
+
+.logo-subtitle{
+
+font-size:10px;
+
+}
+
+}
+
+@media (max-width:480px){
+
+.mobile-drawer{
+
+width:100%;
+
+max-width:100%;
+
+}
+
+}
