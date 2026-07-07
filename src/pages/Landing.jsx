@@ -82,7 +82,7 @@ export default function Landing() {
       {/* Hero */}
       <section
         id="home"
-        className="relative max-w-7xl mx-auto px-6 pt-32 pb-28 text-center"
+        className="relative max-w-7xl mx-auto px-6 pt-10 pb-28 text-center"
       >
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-accent/20 rounded-full blur-[140px] pointer-events-none" />
         <motion.div
