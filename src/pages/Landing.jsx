@@ -109,12 +109,23 @@ export default function Landing() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="relative text-5xl md:text-6xl font-extrabold tracking-tight text-white leading-[1.1]"
+          className="
+    relative
+    font-extrabold
+    tracking-tight
+    text-white
+    leading-tight
+    text-4xl
+    sm:text-5xl
+    md:text-6xl
+    lg:text-7xl
+  "
         >
-          {/* Hiring, reimagined by <span className="gradient-text">AI</span>.  */}
-          Next Generation
-          <br />
-          <span className="gradient-text">AI Recruitment Platform</span>
+          <span className="block">Next Generation</span>
+
+          <span className="block gradient-text mt-1">
+            AI Recruitment Platform
+          </span>
         </motion.h1>
 
         <motion.p
@@ -200,7 +211,7 @@ export default function Landing() {
       </section>
 
       {/* Stats */}
-      <section id="stats" className="max-w-6xl mx-auto px-8 pb-20">
+      <section id="stats" className="scroll-mt-28 pt-12 max-w-6xl mx-auto px-8 pb-20">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {stats.map((s, i) => (
             <motion.div

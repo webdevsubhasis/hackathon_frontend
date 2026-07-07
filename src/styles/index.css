@@ -2,13 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body { @apply bg-navy-950 text-slate-200; scroll-behavior: smooth; }
-* { box-sizing: border-box; }
+html,
+body {
+  @apply bg-navy-950 text-slate-200;
+  scroll-behavior: smooth;
+}
+* {
+  box-sizing: border-box;
+}
 
-::-webkit-scrollbar { width: 8px; height: 8px; }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: #2A3555; border-radius: 8px; }
-::-webkit-scrollbar-thumb:hover { background: #3A4770; }
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a3555;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3a4770;
+}
 
 .glass-card {
   @apply bg-navy-800/60 backdrop-blur-xl border border-white/5 rounded-2xl;
@@ -40,7 +56,25 @@ html, body { @apply bg-navy-950 text-slate-200; scroll-behavior: smooth; }
 }
 
 @keyframes pulse-ring {
-  0% { box-shadow: 0 0 0 0 rgba(108, 92, 231, 0.5); }
-  100% { box-shadow: 0 0 0 24px rgba(108, 92, 231, 0); }
+  0% {
+    box-shadow: 0 0 0 0 rgba(108, 92, 231, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 0 24px rgba(108, 92, 231, 0);
+  }
 }
-.pulse-ring { animation: pulse-ring 1.6s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+.pulse-ring {
+  animation: pulse-ring 1.6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#home,
+#workflow,
+#stats,
+#technology,
+#contact {
+  scroll-margin-top: 90px;
+}

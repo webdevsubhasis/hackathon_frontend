@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 import workflowData from "./workflowData";
@@ -8,10 +8,24 @@ export default function Workflow() {
   // ===========================
   // Split workflow into 2 rows
   // ===========================
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
 
   const topRow = workflowData.slice(0, 4);
 
-  const bottomRow = [...workflowData.slice(4)].reverse();
+ const bottomRow = isMobile
+  ? workflowData.slice(4)
+  : [...workflowData.slice(4)].reverse();
 
   return (
     <section id="workflow" className="workflow-section">
